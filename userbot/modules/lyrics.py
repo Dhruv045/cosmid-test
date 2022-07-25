@@ -5,8 +5,8 @@
 import os
 import lyricsgenius
 from pylast import User
-from userbot import CMD_HELP, GENIUS, LASTFM_USERNAME, lastfm
-from userbot.events import register
+from bot import CMD_HELP, GENIUS, LASTFM_USERNAME, lastfm
+from bot.events import register
 
 if GENIUS is not None:
     genius = lyricsgenius.Genius(GENIUS)

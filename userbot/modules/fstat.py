@@ -1,5 +1,5 @@
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from bot import CMD_HELP, bot
+from bot.events import register
 from telethon.events import NewMessage
 
 

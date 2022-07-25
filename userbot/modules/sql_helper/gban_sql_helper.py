@@ -1,4 +1,4 @@
-#  Ported from Catuserbot
+#  Ported from Catbot
 #   Copyright (C) 2020  
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as
@@ -12,7 +12,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from sqlalchemy import Column, String
 
-from userbot.modules.sql_helper import BASE, SESSION
+from bot.modules.sql_helper import BASE, SESSION
 
 
 class GBan(BASE):

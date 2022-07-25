@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for getting information about the server. """
+""" bot module for getting information about the server. """
 
 import platform
 import shutil
@@ -21,8 +21,8 @@ import psutil
 from git import Repo
 from telethon import __version__, version
 
-from userbot import ALIVE_LOGO, ALIVE_MESSAGE, ALIVE_NAME, CMD_HELP, TIMEOUT, USERBOT_VERSION, StartTime, bot
-from userbot.events import register
+from bot import ALIVE_LOGO, ALIVE_MESSAGE, ALIVE_NAME, CMD_HELP, TIMEOUT, bot_VERSION, StartTime, bot
+from bot.events import register
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -169,7 +169,7 @@ async def bot_ver(event):
             revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             await event.edit(
-                "`Userbot Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
+                "`bot Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
             )
         else:
             await event.edit(
@@ -187,7 +187,7 @@ async def amireallyalive(alive):
         f"• `Owner          : {DEFAULTUSER} `\n"
         f"• `Loaded modules : {len(modules)} `\n"
         f"• `Branch         : {repo.active_branch.name} `\n"
-        f"• `Bot Version    : {USERBOT_VERSION} `\n"
+        f"• `Bot Version    : {bot_VERSION} `\n"
         f"• `Bot Uptime     : {uptime} `\n\n"
         f"Use `.help` for more info\n"
         )
@@ -243,7 +243,7 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "botver": ".botver\
-    \nUsage: Shows the userbot version."
+    \nUsage: Shows the bot version."
     }
 )
 CMD_HELP.update(

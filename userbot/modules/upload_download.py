@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; The entire source code is OSSRPL except; 'download, uploadir, uploadas, upload' which is MPL; License: MPL and OSSRPL
 
-""" Userbot module which contains everything related to downloading/uploading from/to the server. """
+""" bot module which contains everything related to downloading/uploading from/to the server. """
 
 import asyncio
 import math
@@ -15,15 +15,15 @@ from pySmartDL import SmartDL
 from requests import get
 from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.utils import humanbytes, progress, run_cmd
-from userbot.utils.FastTelethon import download_file, upload_file
+from bot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
+from bot.utils import humanbytes, progress, run_cmd
+from bot.utils.FastTelethon import download_file, upload_file
 
 
 @register(pattern=r"\.dl(?: |$)(.*)", outgoing=True)
 async def download(target_file):
-    """ For .download command, download files to the userbot's server. """
+    """ For .download command, download files to the bot's server. """
     await target_file.edit("**Processing...**")
     input_str = target_file.pattern_match.group(1)
     replied = await target_file.get_reply_message()
@@ -311,7 +311,7 @@ async def upload(event):
 
 @register(pattern=r".download(?: |$)(.*)", outgoing=True)
 async def download(target_file):
-    """ For .download command, download files to the userbot's server. """
+    """ For .download command, download files to the bot's server. """
     await target_file.edit("Processing ...")
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -465,10 +465,10 @@ async def uploadir(udir_event):
 
 @register(pattern=r"\.upload (.*)", outgoing=True)
 async def upload(u_event):
-    """ For .upload command, allows you to upload a file from the userbot's server """
+    """ For .upload command, allows you to upload a file from the bot's server """
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
-    if input_str in ("userbot.session", "config.env"):
+    if input_str in ("bot.session", "config.env"):
         return await u_event.edit("`That's a dangerous operation! Not Permitted!`")
     if os.path.exists(input_str):
         c_time = time.time()

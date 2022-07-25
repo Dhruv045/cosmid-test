@@ -10,9 +10,9 @@ from emoji import get_emoji_regexp
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from userbot.events import register
-from userbot.utils import edit_or_reply
-from userbot import CMD_HELP 
+from bot.events import register
+from bot.utils import edit_or_reply
+from bot import CMD_HELP 
 
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""

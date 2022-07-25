@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot initialization. """
+""" bot initialization. """
 
 import os
 import platform
@@ -50,7 +50,7 @@ if version_info[0] < 3 or version_info[1] < 8:
     quit(1)
 
 repo_lenk = Repo().remotes.origin.url.split('.git')[0].split('.com/')[1] if Repo().remotes.origin.url else "null"
-LOGS.info(f"Starting Cosmic Userbot on {repo_lenk}")
+LOGS.info(f"Starting Cosmic bot on {repo_lenk}")
 
 # Check if the config was edited by using the already used variable.
 # Basically, its the 'virginity check' for the config file ;)
@@ -69,7 +69,7 @@ API_HASH = os.environ.get("API_HASH") or None
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 DEVS = 850714127, 1391975600, 1258887267, 1549401069
 
-# Userbot Session String
+# bot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION") or None
 
 # Deezloader
@@ -78,14 +78,14 @@ DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
 
-# Userbot logging feature switch.
+# bot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG") or "False")
 if BOTLOG:
     LOGSPAMMER = sb(os.environ.get("LOGSPAMMER") or "False")
 else:
     LOGSPAMMER = False
 
-# Userbot tags logging feature switch.
+# bot tags logging feature switch.
 LOG_TAGGING = sb(os.environ.get("LOG_TAGGING") or "False")
 LOG_TAGGING_CHATID = int(os.environ.get("LOG_TAGGING_CHATID") or 0)
 
@@ -103,7 +103,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN") or None
 
 # Custom (forked) repo URL and BRANCH for updater.
 UPSTREAM_REPO_URL = (os.environ.get("UPSTREAM_REPO_URL")
-                     or "https://github.com/SkyLab-Devs/CosmicUserbot.git")
+                     or "https://github.com/SkyLab-Devs/Cosmicbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "starfire"
 ###
 
@@ -143,7 +143,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT") or "False")
 ALIVE_NAME = os.environ.get("ALIVE_NAME") or None
 
 # Default .alive logo
-ALIVE_LOGO = str(os.environ.get("ALIVE_LOGO") or "https://github.com/SkyLab-Devs/CosmicUserbot/raw/starfire/resources/cosmic.jpg")
+ALIVE_LOGO = str(os.environ.get("ALIVE_LOGO") or "https://github.com/SkyLab-Devs/Cosmicbot/raw/starfire/resources/cosmic.jpg")
 
 # Custom Alive Message
 ALIVE_MESSAGE = str(os.environ.get("ALIVE_MESSAGE") or "")
@@ -156,13 +156,13 @@ COUNTRY = str(os.environ.get("COUNTRY") or "")
 TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 
 # Version of Project Fizilion
-USERBOT_VERSION = "4.5"
+bot_VERSION = "4.5"
 
 # User Terminal alias
 USER_TERM_ALIAS = os.environ.get("USER_TERM_ALIAS") or "starfire"
 
 # Updater alias
-UPDATER_ALIAS = os.environ.get("UPDATER_ALIAS") or "Cosmic Userbot"
+UPDATER_ALIAS = os.environ.get("UPDATER_ALIAS") or "Cosmic bot"
 
 # Zipfile module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY") or "./zips"
@@ -232,7 +232,7 @@ if STRING_SESSION:
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
     # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    bot = TelegramClient("bot", API_KEY, API_HASH)
 
 
 async def check_botlog_chatid():

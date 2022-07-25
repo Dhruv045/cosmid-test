@@ -1,12 +1,12 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module containing userid, chatid and log commands. """
+""" bot module containing userid, chatid and log commands. """
 
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
-from userbot.events import register
-from userbot.modules.admin import get_user_from_event
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from bot.events import register
+from bot.modules.admin import get_user_from_event
 
 
 @register(outgoing=True, pattern="^.userid$")
@@ -82,7 +82,7 @@ async def kickme(leave):
 async def unmute_chat(unm_e):
     """ For .unmutechat command, unmute a muted chat. """
     try:
-        from userbot.modules.sql_helper.keep_read_sql import unkread
+        from bot.modules.sql_helper.keep_read_sql import unkread
     except AttributeError:
         await unm_e.edit("`Running on Non-SQL Mode!`")
         return
@@ -96,7 +96,7 @@ async def unmute_chat(unm_e):
 async def mute_chat(mute_e):
     """ For .mutechat command, mute any chat. """
     try:
-        from userbot.modules.sql_helper.keep_read_sql import kread
+        from bot.modules.sql_helper.keep_read_sql import kread
     except AttributeError:
         await mute_e.edit("`Running on Non-SQL mode!`")
         return
@@ -115,7 +115,7 @@ async def mute_chat(mute_e):
 async def keep_read(message):
     """ The mute logic. """
     try:
-        from userbot.modules.sql_helper.keep_read_sql import is_kread
+        from bot.modules.sql_helper.keep_read_sql import is_kread
     except AttributeError:
         return
     kread = is_kread()

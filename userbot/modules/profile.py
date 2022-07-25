@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for changing your Telegram profile details. """
+""" bot module for changing your Telegram profile details. """
 
 import os
 
@@ -15,8 +15,8 @@ from telethon.tl.functions.photos import (
 )
 from telethon.tl.types import Channel, Chat, InputPhoto, MessageMediaPhoto, User
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from bot import CMD_HELP, bot
+from bot.events import register
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"

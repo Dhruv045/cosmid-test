@@ -4,9 +4,9 @@
 
 import os
 import subprocess
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.utils import media_type
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
+from bot.utils import media_type
 
 @register(outgoing=True, pattern=r"^.getc(?: |$)([\s\S]*)")
 async def get_media(event):

@@ -16,8 +16,8 @@ from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)

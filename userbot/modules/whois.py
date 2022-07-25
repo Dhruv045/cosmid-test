@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; The entire source code is OSSRPL except 'whois' which is MPL; License: MPL and OSSRPL
 
-""" Userbot module for getiing info about any user on Telegram(including you!). """
+""" bot module for getiing info about any user on Telegram(including you!). """
 
 import os
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -8,8 +8,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
 
 
 @register(pattern=".whois(?: |$)(.*)", outgoing=True)

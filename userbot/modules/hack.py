@@ -1,13 +1,13 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Ported from userge by @PrajjuS
 
-""" meme module for userbot. """
+""" meme module for bot. """
 
-from userbot.events import register
-from userbot import CMD_HELP
+from bot.events import register
+from bot import CMD_HELP
 import time
 from asyncio import sleep 
 from telethon import events , client , TelegramClient
-from userbot.modules.admin import get_user_from_event
+from bot.modules.admin import get_user_from_event
 
 @register(outgoing=True, pattern="^.hack$")
 async def hack_func(event):

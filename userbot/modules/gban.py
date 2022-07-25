@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License. ;Ported from Catuserbot ;Copyright (C) 2020
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License. ;Ported from Catbot ;Copyright (C) 2020
 
 """ a module for globally banning users. """
 
@@ -14,12 +14,12 @@ from telethon.tl.types import ChatBannedRights
 from telethon.tl.types import Channel
 from telethon.tl.types import MessageEntityMentionName
 
-import userbot.modules.sql_helper.gban_sql_helper as gban_sql
-from userbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+import bot.modules.sql_helper.gban_sql_helper as gban_sql
+from bot.modules.sql_helper.mute_sql import is_muted, mute, unmute
 
-from userbot import BOTLOG, BOTLOG_CHATID, DEVS, CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, DEVS, CMD_HELP
+from bot.utils import edit_delete, edit_or_reply
+from bot.events import register
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,

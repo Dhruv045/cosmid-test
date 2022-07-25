@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Modified by Senpai-sama-afk/@SenpaiAF
 
-""" Userbot module containing various scrapers. """
+""" bot module containing various scrapers. """
 
 import asyncio
 import json
@@ -25,11 +25,11 @@ from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
-from userbot.modules.upload_download import get_video_thumb
-from userbot.utils import chrome, duckduckgoscraper, progress
-from userbot.utils.FastTelethon import upload_file
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
+from bot.modules.upload_download import get_video_thumb
+from bot.utils import chrome, duckduckgoscraper, progress
+from bot.utils.FastTelethon import upload_file
 
 CARBONLANG = "auto"
 TTS_LANG = "en"
@@ -454,7 +454,7 @@ async def imdb(e):
         
 @register(pattern=r"\.lang (trt|tts) (.*)", outgoing=True)
 async def lang(value):
-    """ For .lang command, change the default langauge of userbot scrapers. """
+    """ For .lang command, change the default langauge of bot scrapers. """
     util = value.pattern_match.group(1).lower()
     if util == "trt":
         scraper = "Translator"

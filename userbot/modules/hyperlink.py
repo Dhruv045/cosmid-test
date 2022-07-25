@@ -2,8 +2,8 @@
 
 """ hyperlink creator module. """
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^.hl(.*)")

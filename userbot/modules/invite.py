@@ -4,8 +4,8 @@
 
 from asyncio import sleep
 from telethon import functions
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 @register(outgoing=True, pattern="^.invite(?: |$)(.*)")
 async def _(event):

@@ -8,7 +8,7 @@ import re
 import hashlib
 from telethon.tl.types import DocumentAttributeFilename
 import asyncio
-from userbot import SUDO_USERS
+from bot import SUDO_USERS
 import os
 import requests
 from hachoir.metadata import extractMetadata

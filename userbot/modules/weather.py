@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for getting the weather of a city. """
+""" bot module for getting the weather of a city. """
 
 import json
 from datetime import datetime
@@ -11,10 +11,10 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 from requests import get
 
-from userbot import CMD_HELP
-from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
-from userbot import WEATHER_DEFCITY, WEATHER_DEFLANG
-from userbot.events import register
+from bot import CMD_HELP
+from bot import OPEN_WEATHER_MAP_APPID as OWM_API
+from bot import WEATHER_DEFCITY, WEATHER_DEFLANG
+from bot.events import register
 
 # ===== CONSTANT =====
 if WEATHER_DEFCITY:

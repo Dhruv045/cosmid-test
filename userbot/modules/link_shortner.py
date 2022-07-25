@@ -7,8 +7,8 @@ from asyncio import sleep
 from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from bot import CMD_HELP, bot
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.short(?: |$)(.*)")

@@ -1,5 +1,5 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; credits to @AvinashReddy3108
-""" This module updates the userbot based on upstream revision. """
+""" This module updates the bot based on upstream revision. """
 
 import asyncio
 import sys
@@ -8,7 +8,7 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import (
+from bot import (
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -18,7 +18,7 @@ from userbot import (
     UPSTREAM_REPO_BRANCH,
     UPSTREAM_REPO_URL,
 )
-from userbot.events import register
+from bot.events import register
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -56,7 +56,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "`Please set up HEROKU_APP_NAME variable"
-                " to be able to deploy newest changes of userbot.`"
+                " to be able to deploy newest changes of bot.`"
             )
             repo.__del__()
             return
@@ -66,10 +66,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n`Invalid Heroku credentials for deploying userbot dyno.`"
+                f"{txt}\n`Invalid Heroku credentials for deploying bot dyno.`"
             )
             return repo.__del__()
-        await event.edit("`Userbot dyno build in progress, please wait...`")
+        await event.edit("`bot dyno build in progress, please wait...`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -109,11 +109,11 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#UPDATE \n" "Your Cosmic Userbot was successfully updated"
+            BOTLOG_CHATID, "#UPDATE \n" "Your Cosmic bot was successfully updated"
         )
 
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "userbot"]
+    args = [sys.executable, "-m", "bot"]
     execle(sys.executable, *args, environ)
     return
 
@@ -139,7 +139,7 @@ async def upstream(event):
         if conf is None:
             return await event.edit(
                 f"`Unfortunately, the directory {error} does not seem to be a git repository."
-                "\nBut we can fix that by force updating the userbot using .update now.`"
+                "\nBut we can fix that by force updating the bot using .update now.`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
@@ -199,7 +199,7 @@ async def upstream(event):
 
     if force_update:
         await event.edit(
-            "`Force-Syncing to latest stable userbot code, please wait...`"
+            "`Force-Syncing to latest stable bot code, please wait...`"
         )
     else:
         await event.edit("`Updating with the power of cosmos, please wait....`")
@@ -211,9 +211,9 @@ async def upstream(event):
 CMD_HELP.update(
     {
         "ota": ".ota"
-        "\nUsage: Checks if the main userbot repository has any updates and shows a changelog if so."
+        "\nUsage: Checks if the main bot repository has any updates and shows a changelog if so."
         "\n\n.ota deploy"
-        "\nUsage: Deploy your userbot at heroku, if there are any updates in your userbot repository."
+        "\nUsage: Deploy your bot at heroku, if there are any updates in your bot repository."
         "\n\n.ota force"
         "\nUsage: Forcefully deploy the dyno regardless of updates, useful for testing, updating docker image, etc."
     }

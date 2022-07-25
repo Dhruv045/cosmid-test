@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Thanks @rupansh
 
-""" Userbot module for kanging stickers or making new ones. """
+""" bot module for kanging stickers or making new ones. """
 
 import io
 import math
@@ -19,8 +19,8 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+from bot import CMD_HELP, bot
+from bot.events import register
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
@@ -372,7 +372,7 @@ async def cb_sticker(event):
 CMD_HELP.update(
     {
         "stickers": ">`.kang <emoji>[optional] <pack number>[optional]`"
-        "\nUsage: Adds sticker or image to your userbot pack."
+        "\nUsage: Adds sticker or image to your bot pack."
         "\n\n>`.stkrinfo`"
         "\nUsage: Gets info about the sticker pack."
         "\n\n>`.getsticker`"

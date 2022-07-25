@@ -1,13 +1,13 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Port From UniBorg to UserBot by keselekpermen69
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Port From UniBorg to bot by keselekpermen69
 
 """ a module for blacklisting specific keywords. """
 
 import io
 import re
 
-import userbot.modules.sql_helper.blacklist_sql as sql
-from userbot import CMD_HELP
-from userbot.events import register
+import bot.modules.sql_helper.blacklist_sql as sql
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -82,7 +82,7 @@ async def on_delete_blacklist(rmbl):
 CMD_HELP.update(
     {
         "blacklist": ".listbl\
-    \nUsage: Lists all active userbot blacklist in a chat.\
+    \nUsage: Lists all active bot blacklist in a chat.\
     \n\n.addbl <keyword>\
     \nUsage: Saves the message to the 'blacklist keyword'.\
     \nThe bot will delete to the message whenever 'blacklist keyword' is mentioned.\

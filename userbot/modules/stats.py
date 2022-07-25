@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Ported from catuserbot by @PrajjuS
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Ported from catbot by @PrajjuS
 
 """ a module for collecting user stats """
 
@@ -8,9 +8,9 @@ import time
 from telethon.tl.custom import Dialog
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import Channel, Chat, User
-from userbot.events import register
-from userbot.utils import edit_or_reply, edit_delete
-from userbot import CMD_HELP
+from bot.events import register
+from bot.utils import edit_or_reply, edit_delete
+from bot import CMD_HELP
 
 # ===================================================== #
 #                       STRINGS                         #

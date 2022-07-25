@@ -5,8 +5,8 @@
 import asyncio
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern="^.cspam (.*)")

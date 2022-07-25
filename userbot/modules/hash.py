@@ -1,14 +1,14 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module containing hash and encode/decode commands. """
+""" bot module containing hash and encode/decode commands. """
 
 from subprocess import PIPE
 from subprocess import run as runapp
 
 import pybase64
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern="^.hash (.*)")

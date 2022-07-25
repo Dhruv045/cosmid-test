@@ -19,9 +19,9 @@ from urllib.error import HTTPError
 
 from pySmartDL import SmartDL
 
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY, MEGA_EMAIL, MEGA_PASSWORD
-from userbot.events import register
-from userbot.utils import humanbytes, time_formatter
+from bot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY, MEGA_EMAIL, MEGA_PASSWORD
+from bot.events import register
+from bot.utils import humanbytes, time_formatter
 
 
 async def subprocess_run(megadl, cmd):
@@ -184,7 +184,7 @@ async def megaput(event):
                 out = f'{output},\nAn error has occured'
             await event.edit(out)
         else:
-            await event.edit(f"Please check if {file} exists in userbot's server")
+            await event.edit(f"Please check if {file} exists in bot's server")
     else:
         await event.edit("`Mega credentials empty, add those to config env`")
 
@@ -203,10 +203,10 @@ CMD_HELP.update(
     {
         "mega": ".mega <MEGA.nz link>"
         "\nUsage: Reply to a MEGA.nz link or paste your MEGA.nz link to "
-        "download the file into your userbot server."
+        "download the file into your bot server."
         "\n\n.megaput <file_path>"
 	"\nUsage: Upload files to your mega.nz drive"
         "\n\n.megareg youremail@example.com;password-you-want"
-        "\nUsage: Register mega account with your userbot, Make sure you make account with this or megareg in terminal to use userbot's megaput function without errors"
+        "\nUsage: Register mega account with your bot, Make sure you make account with this or megareg in terminal to use bot's megaput function without errors"
 	}
 )

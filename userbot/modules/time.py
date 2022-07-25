@@ -1,13 +1,13 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for getting the date and time of any country or the userbot server. """
+""" bot module for getting the date and time of any country or the bot server. """
 
 from datetime import datetime as dt
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
-from userbot import CMD_HELP, COUNTRY, TZ_NUMBER
-from userbot.events import register
+from bot import CMD_HELP, COUNTRY, TZ_NUMBER
+from bot.events import register
 
 
 async def get_tz(con):
@@ -39,8 +39,8 @@ async def get_tz(con):
 async def time_func(tdata):
     """For .time command, return the time of
     1. The country passed as an argument,
-    2. The default userbot country(set it by using .settime),
-    3. The server where the userbot runs.
+    2. The default bot country(set it by using .settime),
+    3. The server where the bot runs.
     """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
@@ -102,8 +102,8 @@ async def time_func(tdata):
 async def date_func(dat):
     """For .date command, return the date of
     1. The country passed as an argument,
-    2. The default userbot country(set it by using .settime),
-    3. The server where the userbot runs.
+    2. The default bot country(set it by using .settime),
+    3. The server where the bot runs.
     """
     con = dat.pattern_match.group(1).title()
     tz_num = dat.pattern_match.group(2)

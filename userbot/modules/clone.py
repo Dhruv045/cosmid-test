@@ -6,8 +6,8 @@ from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.photos import UploadProfilePhotoRequest, DeletePhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import InputPhoto
-from userbot.events import register
-from userbot import CMD_HELP, STORAGE, LOGS, bot
+from bot.events import register
+from bot import CMD_HELP, STORAGE, LOGS, bot
 
 if not hasattr(STORAGE, "userObj"):
     STORAGE.userObj = False

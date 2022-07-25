@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; (c) Shrimadhav U K - UniBorg; Thanks to Prakasaka for porting.
 
-""" background remover module for userbot via api (remove.bg) """
+""" background remover module for bot via api (remove.bg) """
 
 import io
 import os
@@ -8,8 +8,8 @@ import os
 import requests
 from telethon.tl.types import MessageMediaPhoto
 
-from userbot import CMD_HELP, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from bot import CMD_HELP, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
 
 
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")

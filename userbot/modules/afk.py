@@ -1,15 +1,15 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module which contains afk-related commands. """
+""" bot module which contains afk-related commands. """
 
 from asyncio import sleep
 from random import choice, randint
 
 from telethon.events import StopPropagation
 
-from userbot import (AFKREASON, BOTLOG, BOTLOG_CHATID, CMD_HELP, COUNT_MSG,
+from bot import (AFKREASON, BOTLOG, BOTLOG_CHATID, CMD_HELP, COUNT_MSG,
                      ISAFK, PM_AUTO_BAN, USERS)
-from userbot.events import register
+from bot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -32,7 +32,7 @@ AFKSTR = [
     "If I were here,\nI'd tell you where I am.\n\nBut I'm not,\nso ask me when I return...",
     "I am away!\nI don't know when I'll be back!\nHopefully a few minutes from now!",
     "I'm not available right now so please leave your name, number, and address and I will stalk you later.",
-    "Sorry, I'm not here right now.\nFeel free to talk to my userbot as long as you like.\nI'll get back to you later.",
+    "Sorry, I'm not here right now.\nFeel free to talk to my bot as long as you like.\nI'll get back to you later.",
     "I bet you were expecting an away message!",
     "Life is so short, there are so many things to do...\nI'm away doing one of them..",
     "I am not here right now...\nbut if I was...\n\nwouldn't that be awesome?",
@@ -83,7 +83,7 @@ async def afk_on_pm(sender):
     ):
         if PM_AUTO_BAN:
             try:
-                from userbot.modules.sql_helper.pm_permit_sql import \
+                from bot.modules.sql_helper.pm_permit_sql import \
                     is_approved
 
                 apprv = is_approved(sender.sender_id)

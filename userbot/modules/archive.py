@@ -15,9 +15,9 @@ import patoolib
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import progress, edit_or_reply
-from userbot.events import register
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.utils import progress, edit_or_reply
+from bot.events import register
 
 thumb_image_path = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 

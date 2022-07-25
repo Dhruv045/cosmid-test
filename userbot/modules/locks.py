@@ -4,8 +4,8 @@
 
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.types import ChatBannedRights
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^.lock ?(.*)")

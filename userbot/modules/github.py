@@ -9,8 +9,8 @@ from datetime import datetime
 import aiohttp
 from github import Github
 
-from userbot import CMD_HELP, GIT_REPO_NAME, GITHUB_ACCESS_TOKEN, bot
-from userbot.events import register
+from bot import CMD_HELP, GIT_REPO_NAME, GITHUB_ACCESS_TOKEN, bot
+from bot.events import register
 
 GIT_TEMP_DIR = "/One4uBot/temp/"
 
@@ -68,7 +68,7 @@ async def download(event):
         await event.edit("`Please ADD Proper Access Token from github.com`")
         return
     if GIT_REPO_NAME is None:
-        await event.edit("`Please ADD Proper Github Repo Name of your userbot`")
+        await event.edit("`Please ADD Proper Github Repo Name of your bot`")
         return
     mone = await event.reply("Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):
@@ -112,7 +112,7 @@ async def git_commit(file_name, mone):
         if i == 'ContentFile(path="' + file_name + '")':
             return await mone.edit("`File Already Exists`")
             create_file = False
-    file_name = "userbot/modules/" + file_name
+    file_name = "bot/modules/" + file_name
     if create_file:
         file_name = file_name.replace(GIT_TEMP_DIR, "")
         print(file_name)
@@ -124,7 +124,7 @@ async def git_commit(file_name, mone):
             ccess = GIT_REPO_NAME
             ccess = ccess.strip()
             await mone.edit(
-                f"`Commited On Your Github Repo`\n\n[Your Modules](https://github.com/{ccess}/tree/sql-extended/userbot/modules/)"
+                f"`Commited On Your Github Repo`\n\n[Your Modules](https://github.com/{ccess}/tree/sql-extended/bot/modules/)"
             )
         except BaseException:
             print("Cannot Create Plugin")
@@ -138,6 +138,6 @@ CMD_HELP.update(
         "github": ".git <username>"
         "\nUsage: Like .whois but for GitHub usernames."
         "\n\n.commit <reply file>"
-        "\nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled."
+        "\nUsage: GITHUB File Uploader Plugin for bot. Heroku Automation should be Enabled."
     }
 )

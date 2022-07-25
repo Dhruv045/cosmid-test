@@ -1,14 +1,14 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for executing code and terminal commands from Telegram. """
+""" bot module for executing code and terminal commands from Telegram. """
 
 import asyncio
 import re
 from os import remove
 from sys import executable
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, USER_TERM_ALIAS
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP, USER_TERM_ALIAS
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.eval(?: |$|\n)(.*)")
@@ -22,7 +22,7 @@ async def evaluate(query):
     else:
         return await query.edit("``` Give an expression to evaluate. ```")
 
-    for i in ("userbot.session", "env"):
+    for i in ("bot.session", "env"):
         if expression.find(i) != -1:
             return await query.edit("`That's a dangerous operation! Not Permitted!`")
 
@@ -79,7 +79,7 @@ async def run(run_q):
             "execute. Use .help exec for an example.```"
         )
 
-    for i in ("userbot.session", "env"):
+    for i in ("bot.session", "env"):
         if code.find(i) != -1:
             return await run_q.edit("`That's a dangerous operation! Not Permitted!`")
 
@@ -149,7 +149,7 @@ async def terminal_runner(term):
     if term.is_channel and not term.is_group:
         return await term.edit("`Shell commands aren't permitted on channels!`")
 
-    for i in ("userbot.session", "env"):
+    for i in ("bot.session", "env"):
         if command.find(i) != -1:
             return await term.edit("`That's a dangerous operation! Not Permitted!`")
 

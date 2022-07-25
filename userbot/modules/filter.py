@@ -1,12 +1,12 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module for filter commands. """
+""" bot module for filter commands. """
 
 from asyncio import sleep
 from re import IGNORECASE, escape, search
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from bot.events import register
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -15,7 +15,7 @@ async def filter_incoming_handler(handler):
     try:
         if not (await handler.get_sender()).bot:
             try:
-                from userbot.modules.sql_helper.filter_sql import get_filters
+                from bot.modules.sql_helper.filter_sql import get_filters
             except AttributeError:
                 await handler.edit("`Running on Non-SQL mode!`")
                 return
@@ -41,7 +41,7 @@ async def filter_incoming_handler(handler):
 async def add_new_filter(new_handler):
     """ For .filter command, allows adding new filters in a chat """
     try:
-        from userbot.modules.sql_helper.filter_sql import add_filter
+        from bot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
         await new_handler.edit("`Running on Non-SQL mode!`")
         return
@@ -86,7 +86,7 @@ async def add_new_filter(new_handler):
 async def remove_a_filter(r_handler):
     """ For .stop command, allows you to remove a filter from a chat. """
     try:
-        from userbot.modules.sql_helper.filter_sql import remove_filter
+        from bot.modules.sql_helper.filter_sql import remove_filter
     except AttributeError:
         return await r_handler.edit("`Running on Non-SQL mode!`")
     filt = r_handler.pattern_match.group(1)
@@ -128,7 +128,7 @@ async def kick_marie_filter(event):
 async def filters_active(event):
     """ For .filters command, lists all of the active filters in a chat. """
     try:
-        from userbot.modules.sql_helper.filter_sql import get_filters
+        from bot.modules.sql_helper.filter_sql import get_filters
     except AttributeError:
         return await event.edit("`Running on Non-SQL mode!`")
     transact = "`There are no filters in this chat.`"
@@ -146,7 +146,7 @@ async def filters_active(event):
 CMD_HELP.update(
     {
         "filter": ".filters\
-    \nUsage: Lists all active userbot filters in a chat.\
+    \nUsage: Lists all active bot filters in a chat.\
     \n\n.filter <keyword> <reply text> or reply to a message with .filter <keyword>\
     \nUsage: Saves the replied message as a reply to the 'keyword'.\
     \nThe bot will reply to the message whenever 'keyword' is mentioned.\

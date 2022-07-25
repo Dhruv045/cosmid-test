@@ -4,8 +4,8 @@
 
 import asyncio
 import time
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(pattern="^.transfer ?(.+?|) (?:)(arp|bit|cat|cow|gof|tmp|vim|wss|wet|flk|trs|lzs)")

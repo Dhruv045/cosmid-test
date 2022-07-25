@@ -17,8 +17,8 @@
 #
 
 import os
-from userbot import bot, LOG_TAGGING, LOG_TAGGING_CHATID, LOGS
-from userbot.events import register
+from bot import bot, LOG_TAGGING, LOG_TAGGING_CHATID, LOGS
+from bot.events import register
 from telethon import events
 from telethon.tl.types import User
 

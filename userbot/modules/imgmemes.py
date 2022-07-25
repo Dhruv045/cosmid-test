@@ -15,9 +15,9 @@ from telegraph import exceptions
 from telegraph import upload_file
 from validators.url import url
 
-from userbot import bot, CMD_HELP
-from userbot import TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from bot import bot, CMD_HELP
+from bot import TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -475,8 +475,8 @@ async def FakeGoogleSearch(event):
     drawing=ImageDraw.Draw(photo)
     blue=(0,0,255)
     black=(0,0,0)
-    font1=ImageFont.truetype("userbot/utils/styles/ProductSans-BoldItalic.ttf",20)
-    font2=ImageFont.truetype("userbot/utils/styles/ProductSans-Light.ttf",23)
+    font1=ImageFont.truetype("bot/utils/styles/ProductSans-BoldItalic.ttf",20)
+    font2=ImageFont.truetype("bot/utils/styles/ProductSans-Light.ttf",23)
     drawing.text((450, 258), result, fill=blue, font=font1)
     drawing.text((270, 37), search, fill=black, font=font2)
     photo.save("downloads/test.jpg")

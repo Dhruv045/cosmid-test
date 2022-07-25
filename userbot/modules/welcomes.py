@@ -4,14 +4,14 @@
 
 from telethon.events import ChatAction
 
-from userbot import BOTLOG_CHATID, CLEAN_WELCOME, CMD_HELP, LOGS, bot
-from userbot.events import register
+from bot import BOTLOG_CHATID, CLEAN_WELCOME, CMD_HELP, LOGS, bot
+from bot.events import register
 
 
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
     try:
-        from userbot.modules.sql_helper.welcome_sql import (
+        from bot.modules.sql_helper.welcome_sql import (
             get_current_welcome_settings,
             update_previous_welcome,
         )
@@ -89,7 +89,7 @@ async def welcome_to_chat(event):
 @register(outgoing=True, pattern=r"^.setwelcome(?: |$)(.*)")
 async def save_welcome(event):
     try:
-        from userbot.modules.sql_helper.welcome_sql import add_welcome_setting
+        from bot.modules.sql_helper.welcome_sql import add_welcome_setting
     except AttributeError:
         await event.edit("`Running on Non-SQL mode!`")
         return
@@ -126,7 +126,7 @@ async def save_welcome(event):
 @register(outgoing=True, pattern="^.checkwelcome$")
 async def show_welcome(event):
     try:
-        from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
+        from bot.modules.sql_helper.welcome_sql import get_current_welcome_settings
     except AttributeError:
         await event.edit("`Running on Non-SQL mode!`")
         return
@@ -148,7 +148,7 @@ async def show_welcome(event):
 @register(outgoing=True, pattern="^.rmwelcome$")
 async def del_welcome(event):
     try:
-        from userbot.modules.sql_helper.welcome_sql import rm_welcome_setting
+        from bot.modules.sql_helper.welcome_sql import rm_welcome_setting
     except AttributeError:
         await event.edit("`Running on Non-SQL mode!`")
         return

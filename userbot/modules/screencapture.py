@@ -1,14 +1,14 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; The entire source code is OSSRPL except 'screencapture' which is MPL; License: MPL and OSSRPL
 
-""" screen capture module for userbot """
+""" screen capture module for bot """
 
 import io
 from asyncio import sleep
 from re import match
 
-from userbot import CMD_HELP
-from userbot.events import register
-from userbot.utils import chrome, options
+from bot import CMD_HELP
+from bot.events import register
+from bot.utils import chrome, options
 
 
 @register(pattern="^.ss (.*)", outgoing=True)

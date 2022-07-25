@@ -1,11 +1,11 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module containing commands for keeping global notes. """
+""" bot module containing commands for keeping global notes. """
 
 from sqlalchemy.orm.exc import UnmappedInstanceError
 
-from userbot import BOTLOG_CHATID, CMD_HELP
-from userbot.events import register
+from bot import BOTLOG_CHATID, CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True,
@@ -15,7 +15,7 @@ from userbot.events import register
 async def on_snip(event):
     """ Snips logic. """
     try:
-        from userbot.modules.sql_helper.snips_sql import get_snip
+        from bot.modules.sql_helper.snips_sql import get_snip
     except AttributeError:
         return
     name = event.text[1:]
@@ -45,7 +45,7 @@ async def on_snip(event):
 async def on_snip_save(event):
     """ For .snip command, saves snips for future use. """
     try:
-        from userbot.modules.sql_helper.snips_sql import add_snip
+        from bot.modules.sql_helper.snips_sql import add_snip
     except AttributeError:
         return await event.edit("**Running on Non-SQL mode!**")
     keyword = event.pattern_match.group(1)
@@ -88,7 +88,7 @@ async def on_snip_save(event):
 async def on_snip_list(event):
     """ For .snips command, lists snips saved by you. """
     try:
-        from userbot.modules.sql_helper.snips_sql import get_snips
+        from bot.modules.sql_helper.snips_sql import get_snips
     except AttributeError:
         return await event.edit("**Running on Non-SQL mode!**")
 
@@ -105,7 +105,7 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     """ For .remsnip command, deletes a snip. """
     try:
-        from userbot.modules.sql_helper.snips_sql import remove_snip
+        from bot.modules.sql_helper.snips_sql import remove_snip
     except AttributeError:
         return await event.edit("**Running on Non-SQL mode!**")
     name = event.pattern_match.group(1)

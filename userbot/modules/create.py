@@ -1,11 +1,11 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License. ;(c) Spechide - UniBorg ;# Port From UniBorg to UserBot by @afdulfauzan
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License. ;(c) Spechide - UniBorg ;# Port From UniBorg to bot by @afdulfauzan
 
 """ a module for creating groups or channels. """
 
 from telethon.tl import functions
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern="^.create (b|g|c)(?: |$)(.*)")
@@ -20,7 +20,7 @@ async def telegraphs(grop):
             try:
                 result = await grop.client(
                     functions.messages.CreateChatRequest(  # pylint:disable=E0602
-                        users=["@userbotindobot"],
+                        users=["@botindobot"],
                         # Not enough users (to create a chat, for example)
                         # Telegram, no longer allows creating a chat with
                         # ourselves

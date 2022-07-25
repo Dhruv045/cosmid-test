@@ -1,13 +1,13 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Ported from catuserbot by @arshsisodiya
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; Ported from catbot by @arshsisodiya
 
-""" File summary module for userbot. """
+""" File summary module for bot. """
  
 import time
 from prettytable import PrettyTable
-from userbot import CMD_HELP, LOGS
-from userbot.events import register
-from userbot.utils import humanbytes, time_formatter, media_type, edit_delete, edit_or_reply
-from userbot.utils import _format
+from bot import CMD_HELP, LOGS
+from bot.events import register
+from bot.utils import humanbytes, time_formatter, media_type, edit_delete, edit_or_reply
+from bot.utils import _format
 
 
 TYPES = [

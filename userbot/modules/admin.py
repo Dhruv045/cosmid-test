@@ -1,6 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.
 
-""" Userbot module to help you manage a group. """
+""" bot module to help you manage a group. """
 
 import asyncio
 from asyncio import sleep
@@ -38,8 +38,8 @@ from telethon.tl.types import (
     User,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
-from userbot.events import register
+from bot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from bot.events import register
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -349,7 +349,7 @@ async def spider(spdr):
     """
     # Check if the function running under SQL mode
     try:
-        from userbot.modules.sql_helper.spam_mute_sql import mute
+        from bot.modules.sql_helper.spam_mute_sql import mute
     except AttributeError:
         await spdr.edit(NO_SQL)
         return
@@ -417,7 +417,7 @@ async def unmoot(unmot):
 
     # Check if the function running under SQL mode
     try:
-        from userbot.modules.sql_helper.spam_mute_sql import unmute
+        from bot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         await unmot.edit(NO_SQL)
         return

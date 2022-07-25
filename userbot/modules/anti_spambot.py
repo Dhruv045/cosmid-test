@@ -8,7 +8,7 @@ from requests import get
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins, Message
 
-from userbot import (
+from bot import (
     ANTI_SPAMBOT,
     ANTI_SPAMBOT_SHOUT,
     BOTLOG,
@@ -193,6 +193,6 @@ CMD_HELP.update(
     {
         "anti_spambot": "If enabled in config.env or env var,\
         \nthis module will ban(or inform the admins of the group about) the\
-        \nspammer(s) if they match the userbot's anti-spam algorithm."
+        \nspammer(s) if they match the bot's anti-spam algorithm."
     }
 )

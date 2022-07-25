@@ -3,8 +3,8 @@
 """ chat shifting module. """
 
 import asyncio
-from userbot.events import register
-from userbot import CMD_HELP
+from bot.events import register
+from bot import CMD_HELP
 
 @register(pattern=r"\.shift(?: |$)(.*)", outgoing=True)
 async def _(e):

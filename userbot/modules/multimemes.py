@@ -15,9 +15,9 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon import events, functions, types
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
-from userbot.utils import check_media, progress
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from bot.events import register
+from bot.utils import check_media, progress
 
 Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
 

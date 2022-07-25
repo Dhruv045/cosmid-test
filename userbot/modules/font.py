@@ -2,8 +2,8 @@
 
 """ a module for using different fonts. """
 
-from userbot.events import register
-from userbot import CMD_HELP
+from bot.events import register
+from bot import CMD_HELP
 
 normiefont = [
     'a',

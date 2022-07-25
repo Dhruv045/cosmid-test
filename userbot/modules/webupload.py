@@ -4,8 +4,8 @@
 
 import asyncio
 import time
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from bot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from bot.events import register
 import os
 import json
 

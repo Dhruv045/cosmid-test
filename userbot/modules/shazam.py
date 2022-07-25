@@ -3,8 +3,8 @@
 import io
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.shazam(?: |$)(.*)")

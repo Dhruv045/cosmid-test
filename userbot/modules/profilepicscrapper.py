@@ -1,9 +1,9 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; All Thenks goes to Emily ( The creater of This Plugin) from ftg userbot; ported by arshsisodiya
+# Copyright (C) 2019 The Raphielscape Company LLC.; Licensed under the Raphielscape Public License, Version 1.d (the "License"); you may not use this file except in compliance with the License.; All Thenks goes to Emily ( The creater of This Plugin) from ftg bot; ported by arshsisodiya
 
 """ profile pic scrapping module. """
 
-from userbot import CMD_HELP
-from userbot.events import register
+from bot import CMD_HELP
+from bot.events import register
 
 @register(outgoing=True, pattern=r"^\.d(p|isplaypic)(?: |$)(.*)")
 @register(outgoing=True, pattern=r"^\.p(p|profilepic)(?: |$)(.*)")

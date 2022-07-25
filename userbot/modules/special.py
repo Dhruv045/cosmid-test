@@ -8,9 +8,9 @@ import asyncio
 
 import random
 
-from userbot import CMD_HELP
+from bot import CMD_HELP
 
-from userbot.events import register
+from bot.events import register
 
 
 @register(pattern="^.belo(?: |$)(.*)")
